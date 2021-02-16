@@ -5,7 +5,7 @@ pipeline {
                     GOCACHE = "/tmp"   }  
  stages {    
        stage('Build') {      
-         agent {        
+         agent  any{        
              docker {           
                   image 'golang'    }   }       
                      steps {            
@@ -17,7 +17,7 @@ pipeline {
                                 // Build the app.          
                                      sh 'go build'                         }           }   
                                          stage('Test') {        
-                                                agent {          
+                                                agent  any {          
                                                          docker {     
                                                                            image 'golang'               }           }        
                                                                               steps {                           
