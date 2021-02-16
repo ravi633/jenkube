@@ -6,7 +6,7 @@ pipeline {
  stages {    
        stage('Build') {      
          agent{        
-             label {           
+             any {           
                   image 'golang'    }   }       
                      steps {            
    // Create our project directory.        
@@ -18,7 +18,7 @@ pipeline {
                                      sh 'go build'                         }           }   
                                          stage('Test') {        
                                                 agent{          
-                                                         label {     
+                                                         any {     
                                                                            image 'golang'               }           }        
                                                                               steps {                           
                                                                                       // Create our project directory.    
